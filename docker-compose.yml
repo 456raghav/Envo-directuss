@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  directus:
+    image: directus/directus:latest
+    environment:
+      - DATABASE_CLIENT=pg
+      - DATABASE_HOST=caboose.proxy.rlwy.net    # Replace with the correct host from Railway
+      - DATABASE_PORT=37600                    # Replace with the correct port from Railway
+      - DATABASE_USER=postgres     # Replace with the correct username from Railway
+      - DATABASE_PASSWORD=xtaviLhDJUrbwPDuPRZwGNAdKTKFPWvk # Replace with the correct password from Railway
+      - DATABASE_NAME=railway      # Replace with the correct database name from Railway
+      - DATABASE_SSL=true
+      - DATABASE_SSL_SELF_SIGNED=true
+
+    ports:
+      - 8055:8055
+    restart: unless-stopped
